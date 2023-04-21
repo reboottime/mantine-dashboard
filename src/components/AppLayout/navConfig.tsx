@@ -1,4 +1,4 @@
-import { IconForms, IconTable } from '@tabler/icons-react';
+import { IconChartArea, IconForms, IconTable } from '@tabler/icons-react';
 
 export const sidebarMenus: NavLinkProps[] = [
   {
@@ -20,6 +20,17 @@ export const sidebarMenus: NavLinkProps[] = [
       {
         label: 'Basic',
         path: 'forms/basic'
+      }
+    ]
+  },
+  {
+    icon: <IconChartArea />,
+    label: 'Data Visualization',
+    path: '/data-visualization',
+    subMenus: [
+      {
+        label: 'Basic',
+        path: 'data-visualization/basic'
       }
     ]
   }

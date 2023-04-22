@@ -1,4 +1,11 @@
-import { Button, Divider, Navbar, NavLink, ScrollArea } from '@mantine/core';
+import {
+  Button,
+  Divider,
+  Navbar,
+  NavLink,
+  ScrollArea,
+  Transition
+} from '@mantine/core';
 import { IconChevronsLeft, IconChevronsRight } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
 
@@ -8,13 +15,20 @@ import { sidebarMenus } from './navConfig';
 const AppNavbar = () => {
   const { isMiniMode, setIsMiniMode } = useAppMode();
 
-  const navWidth = isMiniMode
-    ? 74
-    : 'auto';
-
   return (
-    <Navbar p="xs"
-      width={{ base: navWidth }}>
+    <Navbar
+      p="xs"
+      style={{
+        transitionProperty: 'width',
+        transitionDuration: '0.3s',
+        transitionDelay: '.2s'
+      }}
+      width={{
+        base: isMiniMode
+          ? 68
+          : 198
+      }}
+    >
       <Navbar.Section component={ScrollArea}
         grow
         mt="xl">
@@ -22,9 +36,15 @@ const AppNavbar = () => {
           <NavLink
             {...{
               ...menu,
-              label: isMiniMode
-                ? undefined
-                : label
+              label: (
+                <Transition
+                  duration={300}
+                  mounted={!isMiniMode}
+                  timingFunction="ease"
+                  transition="scale-x">
+                  {(styles) => <div style={styles}>{label}</div>}
+                </Transition>
+              )
             }}
             component={Link}
             key={label}

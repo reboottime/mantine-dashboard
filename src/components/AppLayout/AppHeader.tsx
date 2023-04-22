@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Flex, Group, Header } from '@mantine/core';
+import { Flex, Group, Header, Transition } from '@mantine/core';
 import { IconSearch } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
 
@@ -11,21 +11,32 @@ const AppHeader: React.FC<Props> = ({ onSearch }) => {
   const { isMiniMode } = useAppMode();
 
   return (
-    <Header height={60}
+    <Header display="flex"
+      height={60}
       p="xs">
       <Group align="center"
         position="apart">
         <Flex align="center">
           <Navbrand to="/">
-            Mantine {' '}
-            {!isMiniMode && <span>Dashboard</span>}
+            Mantine{' '}
+            {!isMiniMode && (
+              <Transition
+                duration={300}
+                mounted={!isMiniMode}
+                timingFunction="ease"
+                transition="scale-x"
+              >
+                {(styles) => <span style={styles}>Dashboard</span>}
+              </Transition>
+            )}
           </Navbrand>
         </Flex>
         <Group>
-          {onSearch && <DebounceInput icon={<IconSearch />}
-            onChange={onSearch}
-            value=""
-          />}
+          {onSearch && (
+            <DebounceInput icon={<IconSearch />}
+              onChange={onSearch}
+              value="" />
+          )}
         </Group>
       </Group>
     </Header>

@@ -36,7 +36,9 @@ export const AppLayout = () => {
             }
           })}
         >
-          <Outlet />
+          <main style={{ width: 'calc(100vw-60px)' }}>
+            <Outlet />
+          </main>
         </AppShell>
       </AppMode>
     </MantineProvider>

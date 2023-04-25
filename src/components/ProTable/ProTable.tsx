@@ -45,7 +45,7 @@ export default function PropTable<T> ({
     onSortingChange: setSorting,
     getCoreRowModel: getCoreRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
-    getRowId,
+    getRowId, // The function that returns a unique identifier for a given row in a table.
     getSortedRowModel: getSortedRowModel()
   });
 

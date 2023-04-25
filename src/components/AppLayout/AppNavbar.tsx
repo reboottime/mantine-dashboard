@@ -3,8 +3,7 @@ import {
   Divider,
   Navbar,
   NavLink,
-  ScrollArea,
-  Transition
+  ScrollArea
 } from '@mantine/core';
 import { IconChevronsLeft, IconChevronsRight } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
@@ -21,7 +20,8 @@ const AppNavbar = () => {
       style={{
         transitionProperty: 'width',
         transitionDuration: '0.3s',
-        transitionDelay: '.2s'
+        transitionDelay: '.2s',
+        overflow: 'hidden'
       }}
       width={{
         base: isMiniMode
@@ -36,15 +36,7 @@ const AppNavbar = () => {
           <NavLink
             {...{
               ...menu,
-              label: (
-                <Transition
-                  duration={300}
-                  mounted={!isMiniMode}
-                  timingFunction="ease"
-                  transition="scale-x">
-                  {(styles) => <div style={styles}>{label}</div>}
-                </Transition>
-              )
+              label
             }}
             component={Link}
             key={label}

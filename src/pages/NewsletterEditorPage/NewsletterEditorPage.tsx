@@ -2,6 +2,8 @@ import { Button } from '@mantine/core';
 import { useRef } from 'react';
 import EmailEditor from 'react-email-editor';
 
+import useLoadScript from './useLoadScript';
+
 const NewsletterEditorPage = () => {
   const emailEditorRef = useRef<any>(null);
 
@@ -10,6 +12,8 @@ const NewsletterEditorPage = () => {
       // eslint-disable-next-line no-console
       console.info(data);
     });
+    // eslint-disable-next-line no-console
+    console.info(emailEditorRef.current?.editor);
   };
 
   const onReady = () => {
@@ -18,6 +22,9 @@ const NewsletterEditorPage = () => {
     // const templateJson = {};
     // emailEditorRef.current.editor.loadDesign(templateJson);
   };
+
+  // eslint-disable-next-line no-console
+  useLoadScript('//editor.unlayer.com/embed.js');
 
   return (
     <div>
@@ -30,7 +37,8 @@ const NewsletterEditorPage = () => {
       </div>
       <EmailEditor onReady={onReady}
         projectId={157670}
-        ref={emailEditorRef} />
+        ref={emailEditorRef}
+      />
     </div>
   );
 };

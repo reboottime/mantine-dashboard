@@ -1,0 +1,1 @@
+solution: https://codesandbox.io/embed/github/unlayer/playgrounds/tree/master/react/custom-tool-and-property-editor?from-embed

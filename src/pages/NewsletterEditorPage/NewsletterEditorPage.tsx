@@ -30,10 +30,14 @@ const NewsletterEditorPage = () => {
           Export HTML
         </Button>
       </div>
-      <EmailEditor onReady={onReady}
+      <EmailEditor
+        onReady={onReady}
         options={{
           customJS: [
-            window.location.protocol + '//' + window.location.host + '/custom.js'
+            window.location.protocol +
+              '//' +
+              window.location.host +
+              '/custom.js'
           ]
         }}
         projectId={1071}

@@ -8,7 +8,7 @@ const NewsletterEditorPage = () => {
   const exportHtml = () => {
     emailEditorRef.current?.editor.exportHtml((data: any) => {
       // eslint-disable-next-line no-console
-      console.info(data);
+      console.info(data.html);
     });
     // eslint-disable-next-line no-console
     console.info(emailEditorRef.current?.editor);

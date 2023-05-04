@@ -2,8 +2,6 @@ import { Button } from '@mantine/core';
 import { useRef } from 'react';
 import EmailEditor from 'react-email-editor';
 
-import useLoadScript from './useLoadScript';
-
 const NewsletterEditorPage = () => {
   const emailEditorRef = useRef<any>(null);
 
@@ -23,9 +21,6 @@ const NewsletterEditorPage = () => {
     // emailEditorRef.current.editor.loadDesign(templateJson);
   };
 
-  // eslint-disable-next-line no-console
-  useLoadScript('//editor.unlayer.com/embed.js');
-
   return (
     <div>
       <div>
@@ -36,7 +31,12 @@ const NewsletterEditorPage = () => {
         </Button>
       </div>
       <EmailEditor onReady={onReady}
-        projectId={157670}
+        options={{
+          customJS: [
+            window.location.protocol + '//' + window.location.host + '/custom.js'
+          ]
+        }}
+        projectId={1071}
         ref={emailEditorRef}
       />
     </div>

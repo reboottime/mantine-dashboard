@@ -2,6 +2,8 @@ import { Button } from '@mantine/core';
 import { useRef } from 'react';
 import EmailEditor from 'react-email-editor';
 
+import templateJson from './design.json';
+
 const NewsletterEditorPage = () => {
   const emailEditorRef = useRef<any>(null);
 
@@ -18,7 +20,7 @@ const NewsletterEditorPage = () => {
     // editor is ready
     // you can load your template here;
     // const templateJson = {};
-    // emailEditorRef.current.editor.loadDesign(templateJson);
+    emailEditorRef.current.editor.loadDesign(templateJson);
   };
 
   return (

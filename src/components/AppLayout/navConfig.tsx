@@ -24,11 +24,6 @@ export const sidebarMenus: NavLinkProps[] = [
     ]
   },
   {
-    icon: <IconForms />,
-    label: 'Newsletter Editor',
-    path: '/newsletter-editor'
-  },
-  {
     icon: <IconChartAreaLine />,
     label: 'Visualization',
     path: '/data-visualization',

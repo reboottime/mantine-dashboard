@@ -1,4 +1,4 @@
-import { IconChartAreaLine, IconForms, IconTable } from '@tabler/icons-react';
+import { IconBook, IconChartAreaLine, IconForms, IconTable } from '@tabler/icons-react';
 
 export const sidebarMenus: NavLinkProps[] = [
   {
@@ -24,6 +24,11 @@ export const sidebarMenus: NavLinkProps[] = [
     ]
   },
   {
+    icon: <IconForms />,
+    label: 'Newsletter Editor',
+    path: '/newsletter-editor'
+  },
+  {
     icon: <IconChartAreaLine />,
     label: 'Visualization',
     path: '/data-visualization',
@@ -33,6 +38,11 @@ export const sidebarMenus: NavLinkProps[] = [
         path: 'data-visualization/basic'
       }
     ]
+  },
+  {
+    icon: <IconBook />,
+    label: 'PDF Reader',
+    path: '/pdf-reader'
   }
 ];
 

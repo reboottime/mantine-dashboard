@@ -11,7 +11,11 @@ export default function EditorPage () {
   // Render the Slate context.
   return (
     <Slate editor={editor}
-      initialValue={initialValue}>
+      initialValue={initialValue}
+      onChange={(e) => {
+        // eslint-disable-next-line no-console
+        console.info(e);
+      }}>
       <Editable />
     </Slate>
   );

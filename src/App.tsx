@@ -1,9 +1,7 @@
-import AppLayout from 'components/AppLayout';
+import EditorPage from 'pages/slate';
 
 const App = () => {
-  return (
-    <AppLayout />
-  );
+  return <EditorPage />;
 };
 
 export default App;
